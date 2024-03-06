@@ -18,8 +18,17 @@ function Middle() {
       const response = await fetch(
         "https://api.coingecko.com/api/v3/coins/bitcoin"
       );
-      const data = await response.json();
-      setData(data);
+      let data = await response.json();
+      
+      if(data.tickers){
+        let filteredData = data.tickers.filter((tick,idx)=> idx<10)
+        console.log(filteredData)
+        data.tickers = filteredData
+        setData(data);
+      } else {
+        setData(data);
+      }
+      
     };
 
     fetchData();
@@ -34,7 +43,7 @@ function Middle() {
     <div className="Middle d-flex">
       <div className="container">
         <p className="text-muted">Cryptocurrencies {">>"}Bitcoin</p>
-        <CryptoDetail data={data} /> {/* modify this line */}
+        <CryptoDetail data={data} /> 
         <MiddleNavbar />
         <Performance data={data} /> {/* modify this line */}
         <Sentiment data={data} /> {/* modify this line */}

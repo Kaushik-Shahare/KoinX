@@ -1,5 +1,50 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+function formatTimestamp(timestamp) {
+  const date = new Date(timestamp);
+  // Use toLocaleDateString to format the date into "DD Month" format
+  return date.toLocaleDateString('en-US', {
+    day: '2-digit',
+    month: 'short',
+    hour:'numeric',
+    minute:'numeric'
+  });
+}
+
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Bitcoin Price Chart (USD)',
+    },
+  },
+};
 
 function CryptoDetail({ data }) {
   const [duration, setDuration] = useState("24h");
@@ -7,23 +52,27 @@ function CryptoDetail({ data }) {
   const chartData = {
     labels:
       data &&
-      data.market_data &&
-      data.market_data.sparkline_7d &&
-      data.market_data.sparkline_7d.price.map((_, i) => i),
+      data.tickers &&
+      data.tickers.map((tick) => formatTimestamp(tick.timestamp)),
     datasets: [
       {
         label: "Price in USD",
         data:
           data &&
-          data.market_data &&
-          data.market_data.sparkline_7d &&
-          data.market_data.sparkline_7d.price,
+          data.tickers &&
+          data.tickers.map(tick=>tick.last),
         fill: false,
         backgroundColor: "rgb(75, 192, 192)",
         borderColor: "rgba(75, 192, 192, 0.2)",
       },
     ],
   };
+
+  useEffect(()=>{
+    // console.log(data.tickers)
+    // console.log(data.tickers.map((tick=> console.log(tick.timestamp))))
+    console.log(chartData)
+  },[])
   return (
     <div className="CryptoDetail Card cardLeft">
       {/* Heading */}
@@ -38,6 +87,7 @@ function CryptoDetail({ data }) {
           srcSet={data && data.image && data.image.large}
           style={{
             height: "20px",
+            marginRight:"5px"
           }}
         />
         {data && data.localization && data.localization.en}{" "}
@@ -123,6 +173,8 @@ function CryptoDetail({ data }) {
         </div>
       </div>
       <hr />
+
+      <Line options={options} data={chartData} />
 
       {/* Graph */}
       <div>
