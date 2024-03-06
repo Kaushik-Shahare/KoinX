@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+body {
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: medium;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Navbar {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
+  height: 50px;
+  object-fit: cover;
+}
+
+.Middle {
+  background-color: #e1f1fd;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Card {
+  background-color: white;
+  margin: 1%;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+.cardLeft {
+  width: 65%;
+}
+.cardRight {
+  width: 35%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Nav {
+  color: gray;
+  border-bottom: 1px solid gray;
+}
+
+.Nav.active {
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+
+.crypto-logo {
+  object-fit: cover;
+  height: 20px;
+}
+
+.TrendingCoin {
+  width: 20%;
+  position: absolute;
+  justify-content: right;
+}
+
+.Footer {
+  padding: 30px;
 }
