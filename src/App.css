@@ -49,6 +49,53 @@ h1 {
   height: 20px;
 }
 
+.graphButton {
+  background-color: white;
+  border: none;
+  border-radius: 40%;
+  color: gray;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.graphButton.active {
+  color: blue;
+  background-color: #e1f1fd;
+  border: none;
+  border-radius: 40%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.aboutBitcoinCard {
+  flex: 1;
+  display: "flex";
+  padding: 20px;
+  margin: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background-color: white;
+}
+.aboutBitcoinImage {
+  height: 100px;
+  width: 100px;
+}
+.aboutBitcoinCardHeading {
+  font-size: 20px;
+  font-weight: bold;
+}
+.aboutBitcoinButton {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
 .TrendingCoin {
   width: 20%;
   position: absolute;

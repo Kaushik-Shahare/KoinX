@@ -24,50 +24,41 @@ function AboutBitcoin({ data }) {
       <h1>Already Holding Bitcoin?</h1>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div
+          className="aboutBitcoinCard"
           style={{
-            flex: 1,
             display: "flex",
-            border: "1px solid black",
-            borderRadius: "10px",
-            padding: "10px",
-            marginRight: "10px",
-            backgroundColor:
-              "linear-gradient(to bottom right, greenblue, redorange)",
+            background: "linear-gradient(to bottom right, #75E6DA, 	#088F8F)",
           }}
         >
           <img
-            src="../left.png"
+            className="aboutBitcoinImage"
+            src="/currency.jpeg"
             alt="Bitcoin"
             style={{ width: "50%", borderRadius: "10px" }}
           />
           <div>
-            <h2>Card 1</h2>
-            <button style={{ width: "100%", borderRadius: "10px" }}>
-              Check Now
-            </button>
+            <h1 className="aboutBitcoinCardHeading">Calculate your Profits</h1>
+            <button className="aboutBitcoinButton">Check Now -></button>
           </div>
         </div>
         <div
+          className="aboutBitcoinCard"
           style={{
-            flex: 1,
             display: "flex",
-            border: "1px solid black",
-            borderRadius: "10px",
-            padding: "10px",
-            background:
-              "linear-gradient(to bottom right, greenblue, redorange)",
+            background: "linear-gradient(to bottom right, #FFD580, #FF4500)",
           }}
         >
           <img
-            src="path_to_your_other_image"
+            className="aboutBitcoinImage"
+            src="/Exchange.jpeg"
             alt="Bitcoin"
             style={{ width: "50%", borderRadius: "10px" }}
           />
           <div>
-            <h2>Card 2</h2>
-            <button style={{ width: "100%", borderRadius: "10px" }}>
-              Check Now
-            </button>
+            <h1 className="aboutBitcoinCardHeading">
+              Calculate your tax liability
+            </h1>
+            <button className="aboutBitcoinButton">Check Now -></button>
           </div>
         </div>
       </div>
