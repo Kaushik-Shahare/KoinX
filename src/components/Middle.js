@@ -40,7 +40,7 @@ function Middle() {
   }
 
   return (
-    <div className="Middle d-lg-flex">
+    <div className="Middle d-flex flex-column flex-lg-row flex-sm-column flwx-md-column">
       <div className="container col-lg-9">
         <p className="text-muted">
           Cryptocurrencies {">>"}{" "}
