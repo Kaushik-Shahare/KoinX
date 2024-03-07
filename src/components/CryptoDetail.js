@@ -43,11 +43,24 @@ const options = {
 
 function CryptoDetail({ data }) {
   const [duration, setDuration] = useState("24h");
+  const [dataGraph, setDataGraph] = useState(null);
   const [activeButton, setActiveButton] = useState("24");
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=${activeButton}`
+      );
+      const data = await response.json();
+      setDataGraph(data);
+    }
+
+    fetchData();
+  }, [activeButton]);
 
   // Filter data based on duration
   const filteredData = useMemo(() => {
-    if (data && data.tickers) {
+    if (dataGraph && dataGraph.prices) {
       const now = Date.now();
       const durationInMilliseconds = {
         1: 3600000,
@@ -58,24 +71,38 @@ function CryptoDetail({ data }) {
         180: 15552000000,
         365: 31536000000,
         max: Infinity,
-      }[duration];
-      return data.tickers.filter(
-        (tick) =>
-          now - new Date(tick.timestamp).getTime() <= durationInMilliseconds
+      }[activeButton];
+      return dataGraph.prices.filter(
+        (price) => now - new Date(price[0]).getTime() <= durationInMilliseconds
       );
     }
     return [];
-  }, [data, duration]);
+  }, [dataGraph, activeButton]);
 
   const chartData = {
-    labels: filteredData.map((tick) => formatTimestamp(tick.timestamp)),
+    labels: filteredData.map((price) => new Date(price[0]).toLocaleString()),
     datasets: [
       {
         label: "Price in USD",
-        data: filteredData.map((tick) => tick.last),
-        fill: false,
+        data: filteredData.map((price) => price[1]),
+        // backgroundColor: (context) => {
+        //   const chart = context.chart;
+        //   const { ctx, chartArea } = chart;
+
+        //   if (!chartArea) {
+        //     return "rgba(75, 192, 192, 0.2)"; // Return a default color if chartArea is not defined
+        //   }
+
+        //   const { top, bottom } = chartArea;
+        //   const gradient = ctx.createLinearGradient(0, top, 0, bottom);
+        //   gradient.addColorStop(0, "rgba(75, 192, 192, 1)");
+        //   gradient.addColorStop(1, "rgba(75, 192, 192, 0.2)");
+
+        //   return gradient;
+        // },
         backgroundColor: "rgb(75, 192, 192)",
-        borderColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "blue",
+        pointRadius: 0,
       },
     ],
   };
