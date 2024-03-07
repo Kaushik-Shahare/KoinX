@@ -8,6 +8,7 @@ import Tokenomics from "./Tokenomics";
 import Team from "./Team";
 import TrendingCoins from "./TrendingCoins";
 import MiddleNavbar from "./MiddleNavbar";
+import GetStarted from "./GetStarted";
 
 function Middle() {
   const [data, setData] = useState(null); // add this line
@@ -51,7 +52,7 @@ function Middle() {
         <Team data={data} />
       </div>
       <div className="container">
-        <TrendingCoins data={data} />
+        <GetStarted />
         <TrendingCoins data={data} />
       </div>
     </div>

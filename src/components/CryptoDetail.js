@@ -187,7 +187,7 @@ function CryptoDetail({ data }) {
               data &&
               data.market_data &&
               data.market_data.price_change_percentage_24h >= 0
-                ? "lightgreen"
+                ? "#e6ffe6"
                 : "#FFCCCC",
             color:
               data &&
