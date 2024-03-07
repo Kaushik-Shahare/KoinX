@@ -28,10 +28,11 @@ h1 {
   border-radius: 8px;
 }
 .cardLeft {
-  width: 65%;
+  width: 100%;
 }
 .cardRight {
-  width: 35%;
+  margin-top: 40px;
+  width: 100%;
 }
 
 .Nav {

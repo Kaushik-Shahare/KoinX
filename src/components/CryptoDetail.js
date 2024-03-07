@@ -42,7 +42,6 @@ const options = {
 };
 
 function CryptoDetail({ data }) {
-  const [duration, setDuration] = useState("24h");
   const [dataGraph, setDataGraph] = useState(null);
   const [activeButton, setActiveButton] = useState("24");
 
@@ -226,7 +225,6 @@ function CryptoDetail({ data }) {
             <button
               className={`graphButton ${activeButton === "1" ? "active" : ""}`}
               onClick={() => {
-                setDuration("1");
                 setActiveButton("1");
               }}
             >
@@ -235,7 +233,6 @@ function CryptoDetail({ data }) {
             <button
               className={`graphButton ${activeButton === "24" ? "active" : ""}`}
               onClick={() => {
-                setDuration("24");
                 setActiveButton("24");
               }}
             >
@@ -244,7 +241,6 @@ function CryptoDetail({ data }) {
             <button
               className={`graphButton ${activeButton === "7" ? "active" : ""}`}
               onClick={() => {
-                setDuration("7");
                 setActiveButton("7");
               }}
             >
@@ -253,7 +249,6 @@ function CryptoDetail({ data }) {
             <button
               className={`graphButton ${activeButton === "30" ? "active" : ""}`}
               onClick={() => {
-                setDuration("30");
                 setActiveButton("30");
               }}
             >
@@ -262,7 +257,6 @@ function CryptoDetail({ data }) {
             <button
               className={`graphButton ${activeButton === "90" ? "active" : ""}`}
               onClick={() => {
-                setDuration("90");
                 setActiveButton("90");
               }}
             >
@@ -273,7 +267,6 @@ function CryptoDetail({ data }) {
                 activeButton === "180" ? "active" : ""
               }`}
               onClick={() => {
-                setDuration("180");
                 setActiveButton("180");
               }}
             >
@@ -284,7 +277,6 @@ function CryptoDetail({ data }) {
                 activeButton === "365" ? "active" : ""
               }`}
               onClick={() => {
-                setDuration("365");
                 setActiveButton("365");
               }}
             >
@@ -295,7 +287,6 @@ function CryptoDetail({ data }) {
                 activeButton === "max" ? "active" : ""
               }`}
               onClick={() => {
-                setDuration("max");
                 setActiveButton("max");
               }}
             >

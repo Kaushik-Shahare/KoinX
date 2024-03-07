@@ -19,16 +19,15 @@ function Middle() {
         "https://api.coingecko.com/api/v3/coins/bitcoin"
       );
       let data = await response.json();
-      
-      if(data.tickers){
-        let filteredData = data.tickers.filter((tick,idx)=> idx<10)
-        console.log(filteredData)
-        data.tickers = filteredData
+
+      if (data.tickers) {
+        let filteredData = data.tickers.filter((tick, idx) => idx < 10);
+        console.log(filteredData);
+        data.tickers = filteredData;
         setData(data);
       } else {
         setData(data);
       }
-      
     };
 
     fetchData();
@@ -40,20 +39,20 @@ function Middle() {
   }
 
   return (
-    <div className="Middle d-flex">
+    <div className="Middle d-lg-flex">
       <div className="container">
         <p className="text-muted">Cryptocurrencies {">>"}Bitcoin</p>
-        <CryptoDetail data={data} /> 
+        <CryptoDetail data={data} />
         <MiddleNavbar />
-        <Performance data={data} /> {/* modify this line */}
-        <Sentiment data={data} /> {/* modify this line */}
-        <AboutBitcoin data={data} /> {/* modify this line */}
-        <Tokenomics data={data} /> {/* modify this line */}
-        <Team data={data} /> {/* modify this line */}
+        <Performance data={data} />
+        <Sentiment data={data} />
+        <AboutBitcoin data={data} />
+        <Tokenomics data={data} />
+        <Team data={data} />
       </div>
-      <div>
-        <TrendingCoins data={data} /> {/* modify this line */}
-        <TrendingCoins data={data} /> {/* modify this line */}
+      <div className="container">
+        <TrendingCoins data={data} />
+        <TrendingCoins data={data} />
       </div>
     </div>
   );
