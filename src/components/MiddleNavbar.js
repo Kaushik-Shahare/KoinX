@@ -11,37 +11,37 @@ function MiddleNavbar() {
       onSelect={setActiveKey}
     >
       <Nav.Item>
-        <Nav.Link className="Nav" eventKey="#overview">
+        <Nav.Link className="Nav" href="#overview">
           Overview
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="Nav" eventKey="#fundamentals">
+        <Nav.Link className="Nav" href="#fundamentals">
           Fundamentals
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="Nav" eventKey="#news">
+        <Nav.Link className="Nav" href="#news">
           News Insights
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="Nav" eventKey="#sentiments">
+        <Nav.Link className="Nav" href="#sentiments">
           Sentiments
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="Nav" eventKey="#team">
+        <Nav.Link className="Nav" href="#team">
           Team
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="Nav" eventKey="#technicals">
+        <Nav.Link className="Nav" href="#technicals">
           Technicals
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="Nav" eventKey="#tokenomics">
+        <Nav.Link className="Nav" href="#tokenomics">
           Tokenomics
         </Nav.Link>
       </Nav.Item>

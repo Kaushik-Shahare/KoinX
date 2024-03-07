@@ -11,13 +11,13 @@ import MiddleNavbar from "./MiddleNavbar";
 import GetStarted from "./GetStarted";
 
 function Middle() {
-  const [data, setData] = useState(null); // add this line
+  const [data, setData] = useState(null);
+  const [id, setId] = useState("bitcoin");
 
   useEffect(() => {
-    // add this block
     const fetchData = async () => {
       const response = await fetch(
-        "https://api.coingecko.com/api/v3/coins/bitcoin"
+        `https://api.coingecko.com/api/v3/coins/${id}`
       );
       let data = await response.json();
 
@@ -41,8 +41,11 @@ function Middle() {
 
   return (
     <div className="Middle d-lg-flex">
-      <div className="container">
-        <p className="text-muted">Cryptocurrencies {">>"}Bitcoin</p>
+      <div className="container col-12 col-lg-9">
+        <p className="text-muted">
+          Cryptocurrencies {">>"}{" "}
+          {data && data.localization && data.localization.en}
+        </p>
         <CryptoDetail data={data} />
         <MiddleNavbar />
         <Performance data={data} />
@@ -51,7 +54,7 @@ function Middle() {
         <Tokenomics data={data} />
         <Team data={data} />
       </div>
-      <div className="container">
+      <div className="container col-12 col-lg-3">
         <GetStarted />
         <TrendingCoins data={data} />
       </div>

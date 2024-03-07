@@ -21,7 +21,7 @@ function Performance({ data }) {
   const percentage = low && high ? ((current - low) / (high - low)) * 100 : 0;
 
   return (
-    <div className="Performance Card cardLeft">
+    <div id="fundamentals" className="Performance Card cardLeft">
       <h1>Performance</h1>
       <div className="d-flex flex-column justify-content-between">
         <div style={{}}>

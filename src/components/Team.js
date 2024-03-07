@@ -2,7 +2,7 @@ import React from "react";
 
 function Team() {
   return (
-    <div className="Team Card cardLeft">
+    <div id="team" className="Team Card cardLeft">
       <h1>Team</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
