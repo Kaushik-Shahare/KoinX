@@ -179,7 +179,7 @@ function CryptoDetail({ data }) {
         </div>
         <div
           style={{
-            marginLeft: "10px",
+            marginLeft: "20px",
             height: "32px",
             padding: "5px",
             borderRadius: "5px",
@@ -208,6 +208,7 @@ function CryptoDetail({ data }) {
               100}
           %
         </div>
+        <p style={{ marginLeft: "10px" }}>(24H)</p>
       </div>
       <hr />
 

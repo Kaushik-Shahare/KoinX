@@ -41,7 +41,7 @@ function Middle() {
 
   return (
     <div className="Middle d-lg-flex">
-      <div className="container col-12 col-lg-9">
+      <div className="container col-lg-9">
         <p className="text-muted">
           Cryptocurrencies {">>"}{" "}
           {data && data.localization && data.localization.en}
@@ -54,7 +54,7 @@ function Middle() {
         <Tokenomics data={data} />
         <Team data={data} />
       </div>
-      <div className="container col-12 col-lg-3">
+      <div className="container col-lg-3">
         <GetStarted />
         <TrendingCoins data={data} />
       </div>
