@@ -18,7 +18,14 @@ function GetStarted() {
         src="/mobile 2 Background Removed.png"
         alt=""
       />
-      <button style={{ width: "60%", borderRadius: "5px", border: "none" }}>
+      <button
+        style={{
+          height: "40px",
+          width: "60%",
+          borderRadius: "5px",
+          border: "none",
+        }}
+      >
         <a style={{}}>Get Started for free -></a>
       </button>
     </div>

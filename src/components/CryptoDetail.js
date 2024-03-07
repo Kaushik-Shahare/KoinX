@@ -165,7 +165,7 @@ function CryptoDetail({ data }) {
                 maximumFractionDigits: 2,
               })}{" "}
           </h1>
-          <p style={{ fontSize: "10px" }}>
+          <p style={{ fontSize: "20px" }}>
             ₹
             {data &&
               data.market_data &&
