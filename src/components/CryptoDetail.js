@@ -8,7 +8,7 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend,
+  Chart,
 } from "chart.js";
 
 function formatTimestamp(timestamp) {
@@ -28,15 +28,20 @@ ChartJS.register(
   PointElement,
   LineElement,
   Title,
-  Tooltip,
-  Legend
+  Tooltip
 );
 
 const options = {
   responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
+  plugins: {},
+  interaction: {
+    mode: "nearest",
+    axis: "x",
+    intersect: false,
+  },
+  scales: {
+    y: {
+      stacked: true,
     },
   },
 };
@@ -82,25 +87,10 @@ function CryptoDetail({ data }) {
     labels: filteredData.map((price) => new Date(price[0]).toLocaleString()),
     datasets: [
       {
-        label: "Price in USD",
         data: filteredData.map((price) => price[1]),
-        // backgroundColor: (context) => {
-        //   const chart = context.chart;
-        //   const { ctx, chartArea } = chart;
-
-        //   if (!chartArea) {
-        //     return "rgba(75, 192, 192, 0.2)"; // Return a default color if chartArea is not defined
-        //   }
-
-        //   const { top, bottom } = chartArea;
-        //   const gradient = ctx.createLinearGradient(0, top, 0, bottom);
-        //   gradient.addColorStop(0, "rgba(75, 192, 192, 1)");
-        //   gradient.addColorStop(1, "rgba(75, 192, 192, 0.2)");
-
-        //   return gradient;
-        // },
-        backgroundColor: "rgb(75, 192, 192)",
+        backgroundColor: "blue",
         borderColor: "blue",
+        fill: true,
         pointRadius: 0,
       },
     ],
