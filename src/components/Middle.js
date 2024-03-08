@@ -14,7 +14,7 @@ function Middle() {
   const [data, setData] = useState(null);
 
   // change the id to "bitcoin" or any other coin id
-  const [id, setId] = useState("ethereum");
+  const [id, setId] = useState("bitcoin");
 
   useEffect(() => {
     const fetchData = async () => {
