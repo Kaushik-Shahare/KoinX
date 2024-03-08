@@ -4,10 +4,11 @@ function Performance({ data }) {
   const [low, setLow] = useState(null);
   const [high, setHigh] = useState(null);
   const [current, setCurrent] = useState(data.market_data.current_price?.usd);
+  const id = `${data.id}`;
 
   useEffect(() => {
     fetch(
-      "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30"
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=30`
     )
       .then((response) => response.json())
       .then((data) => {

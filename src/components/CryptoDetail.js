@@ -211,7 +211,10 @@ function CryptoDetail({ data }) {
             justifyContent: "space-between",
           }}
         >
-          <h1>Bitcoin Price Chart (USD)</h1>
+          <h1>
+            {data && data.localization && data.localization.en} Price Chart
+            (USD)
+          </h1>
           <div>
             <button
               className={`graphButton ${activeButton === "1" ? "active" : ""}`}

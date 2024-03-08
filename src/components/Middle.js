@@ -12,7 +12,9 @@ import GetStarted from "./GetStarted";
 
 function Middle() {
   const [data, setData] = useState(null);
-  const [id, setId] = useState("bitcoin");
+
+  // change the id to "bitcoin" or any other coin id
+  const [id, setId] = useState("ethereum");
 
   useEffect(() => {
     const fetchData = async () => {

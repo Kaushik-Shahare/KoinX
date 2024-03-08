@@ -2,11 +2,11 @@ import React from "react";
 
 function Tokenomics() {
   return (
-    <div className="Tokenomics Card cardLeft">
+    <div id="tokenomics" className="Tokenomics Card cardLeft">
       <h1>Tokenomics</h1>
 
       <h1>Initial Distribution</h1>
-      <div id="tokenomics" className="d-flex justify-content-left">
+      <div className="d-flex justify-content-left">
         <div style={{ position: "relative", width: "200px", height: "200px" }}>
           <div
             style={{
